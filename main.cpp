@@ -23,6 +23,7 @@ void gameReady();
 
 void gameReady()
 {
+    system("color 8F");
     cout << "Animal guessing game" << endl;
     system("pause");
 }
@@ -76,6 +77,7 @@ void preorder(Node *root)
 void updatetree(Node *fin, Node *&prefin)
 {
     string ans, qn;
+    system("color DF");
     cout << "\n\n\t\t\t\t\t****I ACCEPT MY DEFEAT****" << endl;
     cout << "What's your animal?"
          << "\t";
@@ -103,6 +105,7 @@ void updatetree(Node *fin, Node *&prefin)
     {
         prefin->right = qnnode;
     }
+    system("color 0A");
     fstream file;
     file.open("Data.txt", ios::out);
     Serialize(start, file);
@@ -121,7 +124,7 @@ void updatetree(Node *fin, Node *&prefin)
     }
     else if (reply == "no" || reply == "NO" || reply == "No" || reply == "n" || reply == "N")
     {
-
+        system("color 09");
         cout << "Thanks for playing with me, i think we had a good time. See you soon. Bye bye" << endl;
     }
     system("pause");
@@ -132,10 +135,11 @@ void finalquestion(Node *root, Node *prev)
     string reply;
     cout << "Is your animal '" << root->ans << "' ?"
          << "\t";
+    system("color 4F");
     cin >> reply;
     if (reply == "yes" || reply == "YES" || reply == "Yes" || reply == "y" || reply == "Y")
     {
-
+        system("color AF");
         cout << "\n\n\t\t\t\tYAAAAAAAAAAAAAAAAAAAH!!! I found out, Huraaaaay" << endl;
         cout << "\t\t\t\t\t      Thanks for playing" << endl
              << "\n\nDo you want to play again?";
@@ -149,7 +153,7 @@ void finalquestion(Node *root, Node *prev)
         }
         else if (reply == "no" || reply == "NO" || reply == "No" || reply == "n" || reply == "N")
         {
-    
+            system("color 09");
             cout << "Thanks for playing with me, i think we had a good time. See you soon. Bye bye" << endl;
         }
     }
@@ -165,6 +169,7 @@ void finalquestion(Node *root, Node *prev)
 void question(Node *root, Node *prev)
 {
     string reply;
+    system("color 0A");
     if (root->left != NULL && root->right != NULL)
     {
         cout << root->ans << endl;
@@ -199,6 +204,7 @@ int main()
 {
     fstream file;
     struct stat buffer;
+    system("color 0A");
     int present = stat("Data.txt", &buffer);
     if (present == 0)
     {
@@ -216,7 +222,7 @@ int main()
     }
     else
     {
-
+        system("color 4F");
         cout << "FILE NOT FOUND, Please ensure the file \"Data.txt\" is present in the current directory" << endl;
     }
     return 0;
